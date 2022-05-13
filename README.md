@@ -1,0 +1,55 @@
+# Heal&Go App Backend
+
+Monolithic Backend for Rapid Development of Heal&Go Application.
+
+## Built Using
+
+- Express
+- Typescript
+- TypeORM
+- JWT
+- Joi
+- Winston 🐒
+- pgSQL 
+
+## TODO
+
+- [ ] Basic Backend Scaffold
+- [ ] Authentication Scaffold
+- [ ] Add Refresh Token
+- [ ] Dockerized 
+- [ ] Communicate with AI Sub-system 
+- [ ] Add Continuous Deployment to Server
+- [ ] Refactor Code + Standardization
+
+
+## Development
+
+### Requirements
+
+- Node v14+
+- Yarn
+
+### Getting Started
+
+- Pull this repo
+- Setup `.env` (please refer to `.env.example`)
+- Run `yarn migration:run:win` (for Windows) or `yarn migration:run` (for Linux) // if haven't migrate yet
+- Run `yarn dev` to start developing
+
+
+## Deployment
+
+### Docker
+
+- Don't forget to setup any required environment for PostgreSql
+- You can use Dockerfile and docker-compose here
+- Run `docker-compose -f ./docker-compose.prod.yml up -d` to start using default config
+- Setup a reverse proxy for default port 5000
+
+### Anything else
+
+- Don't forget to setup any required environment for CockroachDB
+- Run `yarn build` to get distributon js files
+- Run `yarn start` to start dist server
+
