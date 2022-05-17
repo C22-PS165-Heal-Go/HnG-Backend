@@ -2,6 +2,7 @@ import express, { Router } from 'express';
 import AdapterWrapperService from '../services/adapter-wrapper.service';
 import { RouterMap } from '../types/express';
 import apiRoutes from './api.routes';
+import authRoutes from './auth.routes';
 
 
 const wrapRoutesMap = (routes: RouterMap) => {
@@ -20,6 +21,11 @@ const endpoints = [
         path: '',
         version: '1',
         routes: apiRoutes,
+    },
+    {
+        path: 'auth',
+        version: '1',
+        routes: authRoutes,
     },
 ];
 
