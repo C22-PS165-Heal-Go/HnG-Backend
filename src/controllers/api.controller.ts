@@ -2,20 +2,17 @@ import express from 'express';
 import ApiError from '../utils/api-error';
 import { sendResponse } from '../utils/api';
 import httpStatus from 'http-status';
+import catchAsync from '../utils/catch-async';
 
-class ApiController{
-    static helloWorldHandler(req: express.Request, res: express.Response) {
-        return sendResponse(res, {
-            message: 'Hello World!'
-        })
-    }
 
-    static testAuth(req: express.Request, res: express.Response) {
-        return sendResponse(res, {
-            data: 'Ok'
-        })
-    }
+const helloWorldHandler = catchAsync(async (req: express.Request, res:express.Response)=>{
+    return sendResponse(res, {
+        message: 'Hello World!'
+    })
+})
 
+const ApiController={
+    helloWorldHandler
 }
 
-export default ApiController;
+export default ApiController
