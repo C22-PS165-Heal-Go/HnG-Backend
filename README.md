@@ -14,13 +14,16 @@ Monolithic Backend for Rapid Development of Heal&Go Application.
 
 ## TODO
 
-- [ ] Basic Backend Scaffold
-- [ ] Authentication Scaffold
+- [x] Basic Backend Scaffold
+- [x] Authentication Scaffold
 - [ ] Add Refresh Token
 - [ ] Dockerized 
 - [ ] Communicate with AI Sub-system 
 - [ ] Add Continuous Deployment to Server
 - [ ] Refactor Code + Standardization
+
+## API Documentation
+All available API Endpoints could be accessed in https://www.postman.com/orange-star-402317/workspace/ac735df4-e5c7-4a3d-8184-324867767c4c/overview
 
 
 ## Development
