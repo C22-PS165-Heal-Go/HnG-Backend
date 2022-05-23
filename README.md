@@ -17,7 +17,7 @@ Monolithic Backend for Rapid Development of Heal&Go Application.
 - [x] Basic Backend Scaffold
 - [x] Authentication Scaffold
 - [ ] Add Refresh Token
-- [ ] Dockerized 
+- [X] Dockerized 
 - [ ] Communicate with AI Sub-system 
 - [ ] Add Continuous Deployment to Server
 - [ ] Refactor Code + Standardization
@@ -43,7 +43,7 @@ All available API Endpoints could be accessed in https://www.postman.com/orange-
 
 ## Deployment
 
-### Docker
+### Docker (Coming soon)
 
 - Don't forget to setup any required environment for PostgreSql
 - You can use Dockerfile and docker-compose here
