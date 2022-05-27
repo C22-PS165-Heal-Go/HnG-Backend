@@ -30,15 +30,15 @@ const authRoutes: RouterMap = [
             AuthController.register
         ]
     },
-    {
-        method: 'put',
-        endpoint: '/profile',
-        handlers: [
-            validator(authSchemas.updateProfile),
-            jwtTokenMiddleware,
-            AuthController.updateProfile
-        ]
-    }
+    // {
+    //     method: 'put',
+    //     endpoint: '/profile',
+    //     handlers: [
+    //         validator(authSchemas.updateProfile),
+    //         jwtTokenMiddleware,
+    //         AuthController.updateProfile
+    //     ]
+    // }
 ];
 
 export default authRoutes;

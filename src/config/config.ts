@@ -9,7 +9,11 @@ dotenv.config({ path: path.join(__dirname, '../../.env') });
 const envVarsSchema = Joi.object()
     .keys({
         PORT: Joi.number().default(5000),
-        PORT_TESTING: Joi.number().default(5001),
+
+        MONGO_USERNAME: Joi.string().required(),
+        MONGO_PASSWORD: Joi.string().required(),
+        MONGO_HOST: Joi.string().required(),
+        MONGO_DB: Joi.string().required(),
 
         JWT_SECRET: Joi.string().required().description('JWT secret key'),
         JWT_ACCESS_EXPIRATION: Joi.string().default('1d').description('jwt expiration'),
@@ -27,10 +31,15 @@ if (error) {
 type EnvConfig = {
   env: string,
   corsWhitelist: string,
-  port: {
-    normal: string,
-    test: string,
-  },
+  port: string,
+  mongo:{
+    url: string,
+    options:{
+        useNewUrlParser: boolean,
+        useUnifiedTopology: boolean,
+        useCreateIndex: boolean,
+    }
+},
   jwt: {
     secret: string,
     accessExpiration: string,
@@ -40,9 +49,14 @@ type EnvConfig = {
 const config: EnvConfig = {
     env: nodeEnv,
     corsWhitelist: envVars?.CORS_WHITELIST,
-    port: {
-        normal: envVars?.PORT,
-        test: envVars?.PORT_TESTING,
+    port: envVars?.PORT,
+    mongo:{
+        url: `mongodb://${envVars?.MONGO_USERNAME}:${envVars?.MONGO_PASSWORD}@${envVars?.MONGO_HOST}/${envVars?.MONGO_DB}?authSource=admin`,
+        options:{
+            useNewUrlParser:true,
+            useUnifiedTopology:true,
+            useCreateIndex: true,
+        }
     },
     jwt: {
         secret: envVars?.JWT_SECRET,

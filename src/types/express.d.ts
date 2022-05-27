@@ -1,5 +1,5 @@
 import express, { RequestHandler } from 'express';
-import {User} from '../data/entities/user.entity';
+import {User} from '../models/user.model';
 
 declare module 'express' {
     export interface Request {

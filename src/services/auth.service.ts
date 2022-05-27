@@ -1,55 +1,44 @@
 import httpStatus from 'http-status';
-import { stripObjectKeys } from '../utils/common';
-import { User } from '../data/entities/user.entity';
+import { User } from '../models/user.model';
 import ApiError from '../utils/api-error';
 import jwt from '../utils/jwt';
+import userService from './user.service';
 
-export const loginService = async (email: string, password: string): Promise<{
-  user: any, 
-  token: string, 
-  expiresIn: string 
-}>=>{
-    return new Promise((resolve, reject)=>{
-        User.findOne({...(stripObjectKeys({ email }))})
-            .then((user)=>{
-                if(!user){
-                    return reject(new ApiError(httpStatus.UNAUTHORIZED, 'user not found'))
-                }
-
-                const isValid = jwt.validPassword(password, user?.hash, user?.salt);
-
-                if(isValid){
-                    const tokenObj = jwt.issueJWT(user);
-                    resolve({ 
-                        user: user.toDomain(), 
-                        token: tokenObj.token, 
-                        expiresIn: tokenObj.expires 
-                    })  
-                }else
-                    reject(new ApiError(httpStatus.UNAUTHORIZED, 'wrong credentials'))
-            });
-    })
+const login =async (email:string, password:string) => {
+    const user: User = await userService.getUserByEmail(email, '+hash +salt');
+    const isValid = jwt.validPassword(password, user?.hash, user?.salt);
+    if(isValid){
+        const tokenObj = jwt.issueJWT(user);
+        return { 
+            user: {
+                name: user.name,
+                email: user.email
+            }, 
+            token: tokenObj.token, 
+            expiresIn: tokenObj.expires 
+        }
+    }
+    throw new ApiError(403,'Wrong credential')
 }
 
-export const registerUserService = async (body: { password: string, name: string, email: string })=>{
+const register=async(body: { password: string, name: string, email: string })=>{
     const { email, name, password } = body;
 
-    if ( await User.findOne(stripObjectKeys({email})) ) {
-        throw new ApiError(httpStatus.FORBIDDEN, 'User already exists');
-    }
+    const user = await userService.getUser({email:email})
+    if(user)
+        throw new ApiError(400, 'User already registered')
 
     const saltHash = jwt.genPassword(password);
 
     const salt = saltHash.salt;
     const hash = saltHash.hash;
 
-    const newUser = new User();
-    newUser.email = email;
-    newUser.name = name;
-    newUser.hash = hash;
-    newUser.salt = salt;
-
-    await newUser.save();
+    const newUser = await userService.createUser({
+        name: name,
+        email: email,
+        salt: salt,
+        hash: hash
+    })
 
     const tokenObj = jwt.issueJWT(newUser);
     return { 
@@ -59,15 +48,10 @@ export const registerUserService = async (body: { password: string, name: string
     } 
 }
 
-export const updateUserProfileService = async (user: User, body: {
-    name?: string
-})=>{
-    const { name } = body;
-
-    if ( name )
-        user.name = name;
-    await user.save();
-    return {
-        user: user.toDomain()
-    };
+const authService = {
+    login,
+    register
 }
+
+export default authService;
+

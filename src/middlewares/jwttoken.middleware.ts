@@ -2,8 +2,8 @@ import jwt from 'jsonwebtoken';
 import express from 'express';
 import ApiError from '../utils/api-error';
 import httpStatus from 'http-status';
-import { User } from '../data/entities/user.entity';
 import config from '../config/config';
+import userService from '../services/user.service';
 
 const jwtTokenMiddleware = async (req: express.Request, res: express.Response, next: express.NextFunction) => {
     if(!req.headers.authorization)
@@ -16,7 +16,7 @@ const jwtTokenMiddleware = async (req: express.Request, res: express.Response, n
 
     try {
         const payload = jwt.verify(String(token), config.jwt.secret);
-        const fetchedUser = await User.findOne({id: String(payload?.sub)});
+        const fetchedUser = await userService.getUserByEmail(String(payload?.sub))
 
         if( fetchedUser ){
             req.user = fetchedUser;
