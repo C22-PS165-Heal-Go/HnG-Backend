@@ -1,7 +1,7 @@
 import crypto from 'crypto';
 import jsonwebtoken, { JwtPayload } from 'jsonwebtoken';
 import config from '../config/config';
-import { User } from '../data/entities/user.entity';
+import { User } from '../models/user.model';
 
 /**
  * -------------- HELPER FUNCTIONS ----------------
@@ -57,8 +57,7 @@ function issueJWT(user: User) {
     const expiresIn = config.jwt.accessExpiration;
 
     const payload = {
-        username: user.email,
-        sub: user.id,
+        sub: user.email,
         iat: Date.now(),
     };
 

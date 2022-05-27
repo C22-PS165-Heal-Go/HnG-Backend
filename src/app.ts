@@ -19,10 +19,7 @@ import helmet from 'helmet';
 const app = express();
 
 // Setup
-app.set('port', (
-    config.env !== 'testing' ? config.port.normal : config.port.test) 
-    || 5000
-);
+app.set('port', config.port || 5000);
 app.set('env', config.env);
 
 // Middleware

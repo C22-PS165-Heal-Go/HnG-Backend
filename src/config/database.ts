@@ -1,14 +1,13 @@
-import { createConnection, getConnection } from 'typeorm';
+import {connect as mongoCon} from 'mongoose';
 import logger from '../utils/logger';
-const ormConfig = require('../ormconfig');
+import config from './config';
 
-async function connect(){
+export async function connect(){
     if( process.env.NODE_ENV !== 'production' ){
         logger.info('Running in dev mode!');
     }
-  
     try {
-        const connection = await createConnection(ormConfig);
+        const connection = await mongoCon(config.mongo.url, config.mongo.options);
         logger.info('Database connected!');
         return connection;
     } catch (error) {
@@ -17,5 +16,3 @@ async function connect(){
         process.exit(1);
     }
 }
-
-export {connect};
