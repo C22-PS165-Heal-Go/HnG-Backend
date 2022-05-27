@@ -6,21 +6,19 @@ Monolithic Backend for Rapid Development of Heal&Go Application.
 
 - Express
 - Typescript
-- TypeORM
+- Mongoose
 - JWT
 - Joi
 - Winston 🐒
-- pgSQL 
 
 ## TODO
 
 - [x] Basic Backend Scaffold
 - [x] Authentication Scaffold
-- [ ] Add Refresh Token
 - [X] Dockerized 
 - [ ] Communicate with AI Sub-system 
-- [ ] Add Continuous Deployment to Server
-- [ ] Refactor Code + Standardization
+- [ ] Recommendation Feature
+- [ ] Dashboard Feature
 
 ## API Documentation
 All available API Endpoints could be accessed in https://www.postman.com/orange-star-402317/workspace/ac735df4-e5c7-4a3d-8184-324867767c4c/overview
@@ -47,7 +45,8 @@ All available API Endpoints could be accessed in https://www.postman.com/orange-
 
 - Don't forget to setup any required environment for PostgreSql
 - You can use Dockerfile and docker-compose here
-- Run `docker-compose -f ./docker-compose.prod.yml up -d` to start using default config
+- Run `docker network create api-net` to create the network
+- Run `docker-compose -f ./docker-compose-prod.yml up -d` to start using default config
 - Setup a reverse proxy for default port 5000
 
 ### Anything else

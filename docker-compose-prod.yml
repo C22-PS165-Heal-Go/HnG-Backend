@@ -1,0 +1,35 @@
+version: "3.3"
+services:
+  mn-db:
+    image: mongo:4.4-bionic
+    container_name: healngo-mongo
+    restart: unless-stopped
+    env_file: .env
+    environment:
+        - MONGO_INITDB_ROOT_USERNAME=$MONGO_USERNAME
+        - MONGO_INITDB_ROOT_PASSWORD=$MONGO_PASSWORD
+    ports: 
+        - "27017:27017"
+    volumes:
+        - ./mndata:/data/db
+    networks:
+        - api-net
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: heal-n-go-be
+    container_name: heal-n-go-be
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      # host:docker
+      - "5000:5000"
+    networks:
+      - apinet
+      
+networks: 
+    api-net:
+        external: true
+        
