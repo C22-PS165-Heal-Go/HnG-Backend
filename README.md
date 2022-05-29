@@ -35,7 +35,6 @@ Live server address: http://34.101.142.73:5000/api/v1
 
 - Pull this repo
 - Setup `.env` (please refer to `.env.example`)
-- Run `yarn migration:run:win` (for Windows) or `yarn migration:run` (for Linux) // if haven't migrate yet
 - Run `yarn dev` to start developing
 
 
