@@ -43,10 +43,10 @@ All available API Endpoints could be accessed in https://www.postman.com/orange-
 
 ### Docker (Coming soon)
 
-- Don't forget to setup any required environment for PostgreSql
-- You can use Dockerfile and docker-compose here
+- Clone this repo to target machine
+- Use provided docker-compose here
 - Run `docker network create api-net` to create the network
-- Run `docker-compose -f ./docker-compose-prod.yml up -d` to start using default config
+- Run `docker-compose -f ./docker-compose-prod.yml up -d --build` to start using default config
 - Setup a reverse proxy for default port 5000
 
 ### Anything else
