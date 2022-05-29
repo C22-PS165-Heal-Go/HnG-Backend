@@ -34,3 +34,7 @@ Dockerfile-copy
 /*.crt
 /excl/
 /.idea/
+
+mndata/
+mndata
+/mndata
