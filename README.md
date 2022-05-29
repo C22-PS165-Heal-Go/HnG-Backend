@@ -22,7 +22,7 @@ Monolithic Backend for Rapid Development of Heal&Go Application.
 
 ## API Documentation
 All available API Endpoints could be accessed in https://www.postman.com/orange-star-402317/workspace/ac735df4-e5c7-4a3d-8184-324867767c4c/overview
-
+Live server address: http://34.101.142.73:5000/api/v1
 
 ## Development
 
