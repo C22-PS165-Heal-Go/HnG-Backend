@@ -9,32 +9,34 @@ import { send } from 'process';
 
 
 const getRecommendation = catchAsync(async (req: express.Request, res: express.Response)=>{
+    const { member,age,activity,sport,day,time,gender, price}= req.body
+
+
     const data={
-        'member':1.0,
-        'sport':1.0,
-        'days':5.0,
-        'time':2.0,
-        'gender':1.0,
-        'price':0.0,
-        'berbelanja':0.0,
-        'petualang':0.0,
-        'foto':1.0,
-        'jalan':1.0,
-        'selfie':0.0,
-        'museum':0.0,
-        'pemandangan':1.0,
-        'festival':0.0,
-        'anak':1.0,
-        'dewasa':1.0,
-        'lansia':0.0,
-        'remaja':1.0,
-        'pertengahan':0.0
+        'member':(member+1)/5.0,
+        'sport':sport==1?0.0:1.0,
+        'days':(day+1)/5.0,
+        'time':(time+1)/4.0,
+        'gender':gender,
+        'price':(price+1)/4.0,
+        'berbelanja':activity.includes(7)?1.0:0.0,
+        'petualang':activity.includes(1)?1.0:0.0,
+        'foto':activity.includes(5)?1.0:0.0,
+        'jalan':activity.includes(6)?1.0:0.0,
+        'selfie':activity.includes(3)?1.0:0.0,
+        'museum':activity.includes(0)?1.0:0.0,
+        'pemandangan':activity.includes(2)?1.0:0.0,
+        'festival':activity.includes(4)?1.0:0.0,
+        'anak':age.includes(0)?1.0:0.0,
+        'dewasa':age.includes(2)?1.0:0.0,
+        'lansia':age.includes(4)?1.0:0.0,
+        'remaja':age.includes(1)?1.0:0.0,
+        'pertengahan':age.includes(3)?1.0:0.0
     
     }
     console.log('http://'+config.mlSvc+'/test')
     const x = await axios.post('http://'+config.mlSvc+'/test', data)
-    sendResponse(res, {data: x.data})
-    return 'hwllo'
+    sendResponse(res, {data: x.data.destinations})
     //TODO: process input and post to ML runner
 })
 

@@ -2,6 +2,8 @@ import ApiController from '../controllers/api.controller';
 import jwtTokenMiddleware from '../middlewares/jwttoken.middleware';
 import RecommendationController from '../controllers/recommendation.controller';
 import { RouterMap } from '../types/express';
+import validator from '../middlewares/validator.middleware';
+import apiSchemas from '../validations/api.validation';
 
 // General API Routes /v1
 const apiRoutes: RouterMap = [
@@ -16,7 +18,7 @@ const apiRoutes: RouterMap = [
         method: 'post',
         endpoint: '/recommendation',
         handlers: [
-            //todo: validate
+            validator(apiSchemas.recommendation),
             // jwtTokenMiddleware,
             RecommendationController.getRecommendation
         ]
