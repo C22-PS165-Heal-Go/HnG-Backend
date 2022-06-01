@@ -17,7 +17,7 @@ const apiRoutes: RouterMap = [
         endpoint: '/recommendation',
         handlers: [
             //todo: validate
-            jwtTokenMiddleware,
+            // jwtTokenMiddleware,
             RecommendationController.getRecommendation
         ]
     },
