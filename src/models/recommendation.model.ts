@@ -10,7 +10,7 @@ export interface Recommendation {
 
 const recommendationSchema =  new mongoose.Schema<Recommendation>({
     user: {type: String},
-    destination: {type: mongoose.Schema.Types.ObjectId},
+    destination: {type: mongoose.Schema.Types.ObjectId, ref: 'Destination'},
     status: Number
 },{
     timestamps: true,

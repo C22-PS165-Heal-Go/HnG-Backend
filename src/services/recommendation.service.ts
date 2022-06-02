@@ -34,7 +34,7 @@ const getRecommendation=async (filter: any, selector?: any, populate?: any)=>{
 }
 
 const getRecommendations=async (filter: any, selector?: any, populate?: any)=>{
-    return recommendationModel.find(filter).select(selector).populate(populate)
+    return recommendationModel.find(filter).select(selector).populate(populate).sort([['createdAt',-1],['status',-1]])
 }
 
 const updateRecommendationByID=async (recommendationID: string, updateBody: any)=>{
