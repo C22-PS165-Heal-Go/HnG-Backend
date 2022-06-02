@@ -6,6 +6,8 @@ import catchAsync from '../utils/catch-async';
 import axios from 'axios';
 import config from '../config/config';
 import { send } from 'process';
+import destinationService from '../services/destination.service';
+import recommendationService from '../services/recommendation.service';
 
 
 const getRecommendation = catchAsync(async (req: express.Request, res: express.Response)=>{
@@ -34,10 +36,20 @@ const getRecommendation = catchAsync(async (req: express.Request, res: express.R
         'pertengahan':age.includes(3)?1.0:0.0
     
     }
-    console.log('http://'+config.mlSvc+'/test')
-    const x = await axios.post('http://'+config.mlSvc+'/test', data)
-    sendResponse(res, {data: x.data.destinations})
-    //TODO: process input and post to ML runner
+    const x = await axios.post('http://'+config.mlSvc+'/questionnaire', data)
+    const result = x.data.destinations
+    const destinations =[]
+    for await(const dest of result){
+        const detail = await destinationService.getDestination({name: dest})
+        const rec = await recommendationService.createRecommendation({
+            user: req.user?.email,
+            destination: detail?.id,
+            status: 0
+        })
+        destinations.push({id:rec.id, name: detail?.name, location: detail?.location, description: detail?.description, image: detail?.image})
+    }
+
+    sendResponse(res, {data: destinations})
 })
 
 
