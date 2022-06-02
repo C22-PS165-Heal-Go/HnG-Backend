@@ -21,9 +21,9 @@ const apiRoutes: RouterMap = [
         endpoint: '/recommendation',
         handlers: [
             validator(apiSchemas.recommendation),
-            // jwtTokenMiddleware,
+            jwtTokenMiddleware,
             RecommendationController.getRecommendation
-          ]
+        ]
     },{
         method: 'get',
         endpoint: '/seed',
