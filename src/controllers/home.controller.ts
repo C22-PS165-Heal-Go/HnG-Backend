@@ -7,6 +7,7 @@ import axios from 'axios';
 import config from '../config/config';
 import destinationService from '../services/destination.service';
 import recommendationService from '../services/recommendation.service';
+import { send } from 'process';
 
 const zeroPad = (num: number, places: number) => String(num).padStart(places, '0')
 
@@ -35,11 +36,27 @@ const getHome = catchAsync(async (req: express.Request, res: express.Response)=>
     sendResponse(res, {data: home})
 })
 
+const discover= catchAsync(async(req: express.Request, res: express.Response)=>{
+    const {category, destination, page=0} = req.body
+    const perPage =10
+    let destinations;
+    if(category != undefined){
+        destinations = await destinationService.getDestinationsPaginate({category: category},perPage,page)
+    }else if(destination != undefined){
+        destinations = await destinationService.getDestinationsPaginate({name:{$regex: destination, $options:'i'}},perPage,page)
+    }else if (category!= undefined && destination != undefined){
+        destinations = await destinationService.getDestinationsPaginate({$and:[{name:{$regex: destination, $options:'i'}},{category:category}]},perPage,page)
+    }else{
+        destinations = await destinationService.getDestinationsPaginate({},perPage,page)
+    }
+    sendResponse(res, {data:destinations})
+})
 
 
 
 const HomeController={
-    getHome
+    getHome,
+    discover
 
 }
 

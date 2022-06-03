@@ -38,6 +38,10 @@ const getDestinations=async (filter: any, selector?: any, populate?: any)=>{
     return destinationModel.find(filter).select(selector).populate(populate)
 }
 
+const getDestinationsPaginate=async (filter: any, perPage: number, page: number)=>{
+    return destinationModel.find(filter).limit(perPage).skip(page*perPage)
+}
+
 const updateDestinationByID=async (destinationID: string, updateBody: any)=>{
     const destination = await getDestinationByID(destinationID);
     if(!destination){
@@ -61,6 +65,7 @@ const destinationService = {
     createDestination,
     getDestination,
     getDestinations,
+    getDestinationsPaginate,
     getDestinationByID,
     updateDestinationByID,
     deleteDestinationByID,

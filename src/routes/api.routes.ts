@@ -27,6 +27,14 @@ const apiRoutes: RouterMap = [
     },
     {
         method: 'post',
+        endpoint: '/discover',
+        handlers: [
+            jwtTokenMiddleware,
+            HomeController.discover
+        ]
+    },
+    {
+        method: 'post',
         endpoint: '/recommendation',
         handlers: [
             validator(apiSchemas.recommendation),
