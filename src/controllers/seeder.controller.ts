@@ -275,11 +275,14 @@ const destinationSeeder = catchAsync(async (req: express.Request, res:express.Re
     await destinationService.createDestination({
         name: 'Taman Nasional Bantimurung',
         code: '039',
+        category:'xxxx', //PLEASE FILL THIS
         location: 'Sulawesi Selatan', 
         description: 'Taman Nasional Bantimurung Bulusaraung juga biasa disebut TN Babul. Kawasan taman nasional ini membentang dari Kabupaten Maros hingga Kabupaten Pangkep, Sulawesi Selatan. Luas lahan yang dimiliki kurang lebih 43.750 hektar dan menyimpan keanekaragaman hayati yang melimpah.',
         image: 'https://cdn.timesmedia.co.id/images/2019/10/29/Taman-Nasional-Bantimurung-Bulusaraung.jpg'
     })
     
+
+
     return sendResponse(res, {
         message: 'Sukses!'
     })
