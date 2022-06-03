@@ -1,6 +1,7 @@
 import {Destination, destinationModel} from '../models/destination.model'
 import ApiError from '../utils/api-error';
 import httpStatus from 'http-status';
+import { ObjectId } from 'mongoose';
 
 
 /**
@@ -18,7 +19,7 @@ const createDestination=async(destinationBody: any)=>{
  * @param selector
  * @returns {Destination}
  */
-const getDestinationByID=async (destinationID: string, selector?: any)=>{
+const getDestinationByID=async (destinationID: any, selector?: any)=>{
     return destinationModel.findById(destinationID).select(selector)
 }
 
