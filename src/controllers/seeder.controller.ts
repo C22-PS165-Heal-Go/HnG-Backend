@@ -231,7 +231,7 @@ const destinationSeeder = catchAsync(async (req: express.Request, res:express.Re
         image: 'https://awsimages.detik.net.id/community/media/visual/2019/01/18/327bf7c6-c6f2-4b6c-803a-f0c566fc08ff_169.jpeg?w=780&q=90'
     })
     await destinationService.createDestination({
-        name: 'Pantai Tempora',
+        name: 'Pantai Tampora',
         code: '029',
         category: 'Pantai',
         location: 'Jawa Timur',
@@ -1134,7 +1134,22 @@ const destinationSeeder = catchAsync(async (req: express.Request, res:express.Re
         description: 'Tempat wisata ini menjadi tempat rekreasi keluarga bertema waterpark atau taman air. Waterbom PIK menawarkan suasana Urban Cool dengan tema taman tropis yang identik dengan pohon yang rimbun.',
         image: 'https://cektiket.id/wp-content/uploads/2019/03/Waterboom-PIK-Jakarta.png'
     })
-
+    await destinationService.createDestination({
+        name: 'Air Terjun Madakaripura',
+        code: '142',
+        category:'Air', 
+        location: 'Jawa Timur', 
+        description: 'Air terjun Madakaripura berada di ujung lembah sempit dan berbentuk ceruk yang dikelilingi tebing-tebing curam yang meneteskan air pada seluruh bidang tebingnya seperti layaknya sedang hujan, 3 di antaranya bahkan mengucur deras membentuk air terjun lagi.',
+        image: 'https://setapaklangkah.com/wp-content/uploads/2020/10/Wisata-Air-Terjun-Madakaripura.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Klingking',
+        code: '143',
+        category:'Pantai', 
+        location: 'Bali', 
+        description: 'Bukan hanya menyuguhkan kawasan pantai berpasir putih yang menggoda, tapi juga samudera luas yang bisa dilihat dari area atas tebing. Warna laut yang biru mempesona, ombak besar menderu-deru kejauhan di pantai berbentuk jari kelingking (yang menjadi asal mula pengambilan namanya), hal tersebut akan menambah eksotisme di tempat ini.',
+        image: 'https://cdns.klimg.com/merdeka.com/i/w/news/2021/03/02/1280264/content_images/670x335/20210302130841-1-pantai-kelingking-nusa-penida-001-tyas-titi-kinapti.jpg'
+    })
 
     return sendResponse(res, {
         message: 'Sukses!'
