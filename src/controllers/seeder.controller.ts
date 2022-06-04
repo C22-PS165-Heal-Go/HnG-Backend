@@ -928,6 +928,174 @@ const destinationSeeder = catchAsync(async (req: express.Request, res:express.Re
         description: 'Curug ini menawarkan Anda sebuah pemandangan yang masih sangat asri dan menenangkan. Anda yang menyukai wisata alam, datang saja ke Curug Cisarua ini dan buktikan sendiri keindahan alamnya.',
         image: 'https://www.bandoeng.co.id/wp-content/uploads/2020/12/Curug-Cimahi.jpg'
     })
+    await destinationService.createDestination({
+        name: 'Curug Cilengkrang',
+        code: '121',
+        category:'Air', 
+        location: 'Jawa Barat', 
+        description: 'Selain air terjun yang indah, objek wisata ini juga menawarkan sejumlah eksotisme alam yang mampu membuat Anda terpukau melihatnya. Pepohonan yang rindang, udara sejuk, suara merdu burung, akan membuat Anda betah berlama-lama menikmati keindahan pemandangannya.',
+        image: 'https://wisatalova.com/wp-content/uploads/2016/10/Curug-Cilengkrang-Bandung-5.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Candi Ijo',
+        code: '122',
+        category:'Candi', 
+        location: 'Yogyakarta', 
+        description: 'Candi Ijo dibangun sekitar abad ke-9, di sebuah bukit yang dikenal dengan Bukit Hijau atau Gumuk Ijo yang ketinggiannya sekitar 410 m di atas permukaan laut. Karena ketinggiannya, maka bukan saja bangunan candi yang bisa dinikmati tetapi juga pemandangan alam di bawahnya berupa teras-teras seperti di daerah pertanian dengan kemiringan yang curam.',
+        image: 'https://sikidang.com/wp-content/uploads/candi-ijo.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Candi Gedong Songo',
+        code: '123',
+        category:'Candi', 
+        location: 'Jawa Tengah', 
+        description: 'Candi Gedong Songo adalah nama sebuah kompleks bangunan candi peninggalan budaya Hindu yang terletak di desa Candi, tepatnya di lereng Gunung Ungaran. Lokasi sembilan candi yang tersebar di lereng Gunung Ungaran ini memiliki pemandangan alam yang indah. Selain itu, objek wisata ini juga dilengkapi dengan pemandian air panas dari mata air yang mengandung belerang, area perkemahan, dan wisata berkuda.',
+        image: 'https://asset.kompas.com/crops/Ve_tsJMbUilZ8tY7L8nyIcCjtD8=/23x0:1003x653/750x500/data/photo/2021/12/26/61c8581af190b.png'
+    })
+    await destinationService.createDestination({
+        name: 'Bukit Moko',
+        code: '124',
+        category:'Gunung', 
+        location: 'Jawa Barat', 
+        description: 'Bandung sebagai destinasi wisata tak pernah ada habisnya. Didukung dengan lanskap yang cantik, kawasan Bandung mampu menarik perhatian wisatawan. Baik dari segi alam, budaya, kuliner, dan seni kreatif secara bersamaan.',
+        image: 'https://sweetrip.id/wp-content/uploads/2021/05/BUKIT-MOKOOO.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Air Terjun Semirang',
+        code: '125',
+        category:'Air', 
+        location: 'Jawa Tengah', 
+        description: 'Air Terjun Semirang atau juga dikenal dengan nama Curug Semirang merupakan sebuah tempat wisata ungaran yang cukup populer. Dengan ketinggian air terjun yang mencapai 45 meter, air terjun ini memberikan keindahan dan kesejukan sebuah air terjun. Lahan wisata alam ini memiliki luas kurang-lebih 10 hektar. Suasana lingkungan sangat segar. Terdapat banyak sekali jenis pepohonan rindang di sekitar air terjun ini.',
+        image: 'https://1.bp.blogspot.com/-GYgDJWpc0t8/Xuy26qTilPI/AAAAAAAAIj4/9Z1UOa7MJpgCtIrY63E47k5cFIpOGsR-wCLcBGAsYHQ/s1600/lokasi-dan-tiket-masuk-wana-wisata-curug-semirang-semarang-2020.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Taman Menteng',
+        code: '126',
+        category:'Taman', 
+        location: 'Jakarta', 
+        description: 'Taman Menteng adalah sebuah taman yang berlokasi di kawasan Menteng, Jakarta Pusat. Taman ini dulunya ditempati oleh Stadion Menteng. Taman ini berdiri di atas lahan seluas 2,9 hektar, dan memiliki koleksi 30 spesies tanaman yang berbeda. Taman Menteng juga memiliki beragam fasilitas pendukung seperti taman bermain untuk anak-anak serta lapangan futsal dan basket.',
+        image: 'https://upload.wikimedia.org/wikipedia/commons/c/cd/Taman_Menteng.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Taman Flora',
+        code: '127',
+        category:'Taman', 
+        location: 'Jawa Timur', 
+        description: 'Taman Flora Bratang Surabaya ini mempunyai lahan seluas 2,4 hektar. Di dalamnya terdapat ratusan bunga dan puluhan pohon-pohon besar yang siap memberikan oksigen murni bagi para pengunjungnya. Anda dapat berkumpul dengan keluarga sekaligus mengajak buah hati untuk berekreasi dan belajar tentang berbagai flora ataupun kehidupannya.',
+        image: 'https://getlost.id/wp-content/uploads/2021/05/Yamin-Nathaniel.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Ngobaran',
+        code: '128',
+        category:'Pantai', 
+        location: 'Yogyakarta', 
+        description: 'Ngobaran merupakan pantai yang cukup eksotik. Kalau air surut, anda bisa melihat hamparan alga (rumput laut) baik yang berwarna hijau maupun coklat. Jika dilihat dari atas, hamparan alga yang tumbuh di sela-sela karang tampak seperti sawah di wilayah padat penduduk. Puluhan jenis binatang laut juga terdapat di sela-sela karang, mulai dari landak laut, bintang laut, hingga golongan kerang-kerangan.',
+        image: 'https://mytrip123.com/wp-content/uploads/2019/05/pantai-ngobaran.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Kukup',
+        code: '129',
+        category:'Pantai', 
+        location: 'Yogyakarta', 
+        description: 'Pantai ini memiliki air yang jernih dan banyak terdapat ikan-ikan kecil. Tak heran banyak anak-anak yang memilih untuk berenang sambil mencari ikan-ikan kecil untuk dibawa pulang. Di sebelah kiri pantai, terdapat sebuah jembatan yang menghubungkan bukit karang di tepi pantai dengan bukit karang di seberangnya.',
+        image: 'https://mmc.tirto.id/image/2020/06/20/pantai-kukup-antarafoto--2_ratio-16x9.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Jogan',
+        code: '130',
+        category:'Pantai', 
+        location: 'Yogyakarta', 
+        description: 'Air terjun di bibir laut adalah sesuatu yang langka di Indonesia, bahkan dunia. Tersembunyi di balik perbukitan karst, Gunungkidul di selatan Yogyakarta ternyata menyimpan air terjun yang jatuh langsung ke bibir laut. Sebuah pesona yang sulit ditolak.',
+        image: 'https://cdn.nativeindonesia.com/foto/pantai-jogan/Panorama-Di-Pantai-Jogan.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Bukit Wisata Pulepayung',
+        code: '131',
+        category:'Taman', 
+        location: 'Yogyakarta', 
+        description: 'Tempat wisata ini sempat diperbincangkan di Instagram lantaran menawarkan wisata malam yang menarik, juga beragam aktivitas asyik yang patut dicoba.',
+        image: 'https://img.okezone.com/content/2020/11/16/408/2310338/4-objek-wisata-alam-di-kulon-progo-canting-mas-hingga-pulepayung-7ztsNmIDNO.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Air Terjun Sri Gethuk',
+        code: '132',
+        category:'Air', 
+        location: 'Yogyakarta', 
+        description: 'Pesona keindahan kawasan Air Terjun Sri Gethuk layaknya Verdon Gorge yang ada di Perancis. Memang tidak sepanjang, dan sedalam Verdon Gorge sungainya. Namun view sepanjang Sungai Oyo Gunung Kidul sungguh mengagumkan.',
+        image: 'https://cdn.nativeindonesia.com/foto/air-terjun-sri-gethuk/Cantiknya-Air-Terjun-Sri-Gethuk.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Air Terjun Kedung Pedut',
+        code: '133',
+        category:'Air', 
+        location: 'Yogyakarta', 
+        description: 'Daya tarik utama dari air terjun yang letaknya cukup tersembunyi, antara lain karena warnanya yang unik, yakni biru toska dan putih jernih; serta keberadaannya yang dibuat laksana water park tradisional.',
+        image: 'https://garasijogja.com/wp-content/uploads/2017/03/@imanuel_yuda.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Merapi Park',
+        code: '134',
+        category:'Taman', 
+        location: 'Yogyakarta', 
+        description: 'Merapi Park ialah sebuah taman yang indah dengan dilengkapi banyak banget spot foto yang ajib. Merapi Park sering disebut “The World Landmarks”, karena terdapat beberapa miniatur landmark dari kota-kota besar di dunia.',
+        image: 'https://1.bp.blogspot.com/-6ok5axyZMUQ/XEoIg7O5NhI/AAAAAAAADmI/7u20QjXf8VcfBD3ehgNcr9NGyIAa4YtCQCLcBGAs/s640/landmark02-o.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Taman Hutan Tebet',
+        code: '135',
+        category:'Taman', 
+        location: 'Jakarta', 
+        description: 'Dibalik gedung-gedung yang menjulang tinggi, ternyata Jakarta masih memiliki beberapa ruang terbuka hijau yang bisa dikunjungi. Taman Hutan Tebet adalah salah satu contohnya, yang tak hanya berperan sebagai paru-paru kota tetapi juga menjadi tempat favorit berolahraga. Banyak sekali fasilitas olahraga yang disediakan, mulai jogging track, spot fitnes, hingga lapangan luas.',
+        image: 'https://cdn-2.tstatic.net/tribunnews/foto/bank/images/tebet-eco-park1.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Curug Aseupan',
+        code: '136',
+        category:'Air', 
+        location: 'Jawa Barat', 
+        description: 'Curug Aseupan Jawa Barat masih sangat asri, lokasinya yang terletak di area hutan rakyat menjadikan nuansa asri selalu terjaga. Salah satu air terjun di Bandung yang tidaklah terlalu tinggi, walaupun begitu debit air di curug ini cukup deras. Uniknya warna air yang biru ke hijau – hijauan menambah pesona air terjun ini.',
+        image: 'https://kataomed.com/wp-content/uploads/2021/01/Curug-Aseupan-e1612012969412.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Saloka Theme Park',
+        code: '137',
+        category:'Taman', 
+        location: 'Jawa Tengah', 
+        description: 'Saloka atau lebih dikenal dengan nama Saloka Theme Park merupakan sebuah taman rekreasi tematis yang memiliki konsep kearifan lokal. Hal ini setidaknya ditunjukkan oleh berbagai wahana yang mengusung legenda Jawa, terutama legenda di Jawa Tengah yang digunakan pada 25 wahana berbeda yang tersebar di 5 zona.',
+        image: 'https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit621414gsm/events/2021/03/15/faad2b06-a01d-4dd0-bc0f-acc26965b2b9-1615786965437-8f193faa572586f48a80beefafac7b77.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Puncak Gunung Api Purba Nglanggeran',
+        code: '138',
+        category:'Gunung', 
+        location: 'Yogyakarta', 
+        description: 'Puncak Gunung Api Purba Nglanggeran berada diketinggian 700 mdpl, menjadi salah satu spot moment sunrise yang sering diburu para pecinta mentari pagi. membutuhkan waktu sekitar 50-60 Menit untuk bisa sampai kelokasi ini. Gunung Gedhe sebutan puncak barat Gunung Api Purba ini memiliki kondisi yang agak lapang namun tidak bisa digunakan untuk camping/mendirikan tenda.',
+        image: 'https://asset.kompas.com/crops/LQ2Mj770XSVajKN0p1bpSsuK3BY=/0x0:1800x1200/750x500/data/photo/2020/10/16/5f8982630b991.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Taman Bunga Nusantara',
+        code: '139',
+        category:'Pantai', 
+        location: 'Jawa Barat', 
+        description: 'Taman Bunga Nusantara adalah sebuah taman bunga seluas 35 hektare yang terletak dekat Gunung Gede Pangrango dan Kebun Teh Bogor. Di taman ini disimpan berbagai tipe bunga dari seluruh dunia yang tumbuh di tempat ini, dalam hal ini terutama budi daya anggrek. Diperkirakan ada sekitar 2000 jenis anggrek yang dirawat di tempat ini.',
+        image: 'https://pandawa87cianjur.com/wp-content/uploads/2020/05/taman1.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Nguluran',
+        code: '140',
+        category:'Pantai', 
+        location: 'Yogyakarta', 
+        description: 'Pantai Nguluran merupakan salah satu cara untuk menyaksikan keindahan pantai dengan cara yang lain, lokasinya berada di Kabupaten Gunung Kidul tepatnya di Desa Girikarto, Kecamatan Panggang. Yang menjadi favorit wisatawan ialah spot teras kaca, yakni berupa tempat untuk berfoto dengan lantai yang terbuat dari kaca dan menghadap langsung ke arah lautan.',
+        image: 'https://www.pesisir.net/wp-content/uploads/2021/09/Daya-Tarik-dari-Pantai-Nguluran.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Waterbom PIK (Pantai Indah Kapuk)',
+        code: '141',
+        category:'Air', 
+        location: 'Jakarta', 
+        description: 'Tempat wisata ini menjadi tempat rekreasi keluarga bertema waterpark atau taman air. Waterbom PIK menawarkan suasana Urban Cool dengan tema taman tropis yang identik dengan pohon yang rimbun.',
+        image: 'https://cektiket.id/wp-content/uploads/2019/03/Waterboom-PIK-Jakarta.png'
+    })
 
 
     return sendResponse(res, {
