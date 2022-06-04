@@ -10,6 +10,8 @@ import { ObjectId } from 'mongoose';
  * @returns {Destination}
  */
 const createDestination=async(destinationBody: any)=>{
+    const ext = await getDestination({name: destinationBody.name})
+    if(ext) return
     return await destinationModel.create(destinationBody)
 }
 
