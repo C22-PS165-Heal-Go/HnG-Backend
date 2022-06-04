@@ -2,6 +2,6 @@
 
 docker network create api-net
 
-docker-compose up -d --build
+docker-compose -f ./docker-compose-prod.yml up -d --build
 
 curl localhost:5000/api/v1/seed
