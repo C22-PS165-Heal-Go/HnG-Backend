@@ -583,7 +583,6 @@ const destinationSeeder = catchAsync(async (req: express.Request, res: express.R
         image: 'https://cdns.klimg.com/merdeka.com/i/w/news/2019/02/26/1054945/content_images/670x335/20190226121606-1-bukit-jamur-rancabolang-002-tantri-setyorini.jpg'
     })
 
-
     return sendResponse(res, {
         message: 'Sukses!'
     })

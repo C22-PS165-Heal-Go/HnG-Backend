@@ -18,7 +18,8 @@ const envVarsSchema = Joi.object()
         JWT_SECRET: Joi.string().required().description('JWT secret key'),
         JWT_ACCESS_EXPIRATION: Joi.string().default('1d').description('jwt expiration'),
 
-        CORS_WHITELIST: Joi.string().default('*')
+        CORS_WHITELIST: Joi.string().default('*'),
+        ML: Joi.string().required()
     })
     .unknown();
 
@@ -43,7 +44,8 @@ type EnvConfig = {
   jwt: {
     secret: string,
     accessExpiration: string,
-  }
+  },
+  mlSvc: string
 }
 
 const config: EnvConfig = {
@@ -61,7 +63,8 @@ const config: EnvConfig = {
     jwt: {
         secret: envVars?.JWT_SECRET,
         accessExpiration: envVars?.JWT_ACCESS_EXPIRATION,
-    }
+    },
+    mlSvc: envVars?.ML,
 }
 
 export default config;
