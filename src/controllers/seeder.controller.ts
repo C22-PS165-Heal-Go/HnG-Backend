@@ -281,6 +281,270 @@ const destinationSeeder = catchAsync(async (req: express.Request, res:express.Re
         image: 'https://cdn.timesmedia.co.id/images/2019/10/29/Taman-Nasional-Bantimurung-Bulusaraung.jpg'
     })
     await destinationService.createDestination({
+        name: 'Candi Prambanan',
+        code: '040',
+        category: 'Candi',
+        location: 'Yogyakarta',
+        description: 'Candi Prambanan atau Candi Roro Jonggrang adalah kompleks candi Hindu terbesar di Indonesia yang dibangun pada abad ke-9 masehi. Candi ini dipersembahkan untuk Trimurti, tiga dewa utama Hindu yaitu dewa Brahma sebagai dewa pencipta, dewa Wisnu sebagai dewa pemelihara, dan dewa Siwa sebagai dewa pemusnah.',
+        image: 'https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2020/08/22/1747449169.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Candi Borobudur',
+        code: '041',
+        category: 'Candi',
+        location: 'Jawa Tengah',
+        description: 'Candi Borobudur atau yang disingkat Borobudur adalah sebuah candi Buddha yang terletak di Borobudur, Magelang, Jawa Tengah, Indonesia. Candi ini terletak kurang lebih 100 km di sebelah barat daya Semarang, 86 km di sebelah barat Surakarta, dan 40 km di sebelah barat laut Yogyakarta.',
+        image: 'https://pict.sindonews.net/dyn/620/pena/news/2021/10/02/768/557306/5-misteri-candi-borobudur-yang-belum-terungkap-hingga-kini-vzq.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Taman Situ Lembang',
+        code: '042',
+        category: 'Taman',
+        location: 'Jakarta',
+        description: 'Taman Situ Lembang adalah sebuah taman kota yang terletak di pusat Jakarta. Situ berarti danau yang payau, sedangkan Lembang adalah nama jalan yang berada di dekat taman tersebut. Taman ini merupakan salah satu taman tertua di Jakarta dan memiliki danau kecil yang airnya berasal dari sumber air alam.',
+        image: 'https://www.jejakpiknik.com/wp-content/uploads/2017/09/1-@wahyu04061983-630x380.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Taman Sari',
+        code: '043',
+        category: 'Taman',
+        location: 'Yogyakarta',
+        description: 'Tamansari, yang berarti taman yang indah, pada mulanya merupakan sebuah taman atau kebun istana Keraton Yogyakarta. Kompleks ini dibangun secara bertahap pada masa Sri Sultan Hamengku Buwono I. Pembangunan dimulai pada tahun 1758 M, ditandai oleh candra sengkala "Catur Naga Rasa Tunggal" yang menunjuk tahun 1684 Jawa.',
+        image: 'https://cdn.nativeindonesia.com/foto/taman-sari-jogja/Taman-Sari-Jogja.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Kuta',
+        code: '044',
+        category: 'Pantai',
+        location: 'Bali',
+        description: 'Pantai Kuta adalah sebuah tempat pariwisata yang terletak di kecamatan Kuta, sebelah selatan Kota Denpasar, Bali, Indonesia. Daerah ini merupakan sebuah tujuan wisata turis mancanegara dan telah menjadi objek wisata andalan Pulau Bali sejak awal tahun 1970-an.',
+        image: 'https://indonesiakaya.com/wp-content/uploads/2020/10/pantai_kuta_bali_1200.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Lembang Park & Zoo',
+        code: '045',
+        category: 'Taman',
+        location: 'Jawa Barat',
+        description: 'Lembang Park and Zoo adalah sebuah objek wisata yang memadukan berbagai macam tema wisata dalam satu kawasan. Luas Lembang Park and Zoo sekitar 20 ha, sehingga dengan luas tersebut mampu menyajikan berbagai macam wahana. Meskipun baru hanya sampai 10 ha yang dapat tertata secara optimal.',
+        image: 'https://asset.kompas.com/crops/4uvMnzzclujiISj_eCrKdbkyOFU=/0x90:1080x810/750x500/data/photo/2020/01/26/5e2d3e0492143.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Taman Hutan Raya Ir.H.Djuanda',
+        code: '046',
+        category: 'Taman',
+        location: 'Jawa Barat',
+        description: 'Taman Hutan Raya Ir. H. Djuanda merupakan kawasan konservasi yang terpadu antara alam sekunder dengan hutan tanaman dengan jenis Pinus yang terletak di Sub-Daerah Aliran Sungai Cikapundung.',
+        image: 'https://modernsocialmagazine.com/wp-content/uploads/2019/08/Indahnya-Taman-Hutan-Raya-Juanda.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Red Island Beach',
+        code: '047',
+        category: 'Pantai',
+        location: 'Jawa Timur',
+        description: 'Pulau Merah atau Pulo Merah adalah sebuah pantai dan objek wisata di Kecamatan Pesanggaran, Kabupaten Banyuwangi, Provinsi Jawa Timur. Pantai ini dikenal karena sebuah bukit hijau kecil dengan tanah berwarna merah yang terletak di dekat bibir pantai. Bukit ini dapat dikunjungi dengan berjalan kaki saat air laut surut. ',
+        image: 'https://www.eastjava.com/tourism/banyuwangi/images/pulau-merah.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Parangtritis',
+        code: '048',
+        category: 'Pantai',
+        location: 'Yogyakarta',
+        description: 'Pantai Parangtritis adalah tempat wisata yang terletak di Desa Parangtritis, Kapanéwon Kretek, Kabupaten Bantul, Daerah Istimewa Yogyakarta. Jaraknya kurang lebih 27 km dari pusat Kota Yogyakarta. Pantai ini menjadi salah satu destinasi wisata terkenal di Yogyakarta dan telah menjadi ikon pariwisata di Yogyakarta.',
+        image: 'https://www.pantainesia.com/wp-content/uploads/2020/04/Pantai-Parangtritis-Yogyakarta.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Gunung Lalakon',
+        code: '049',
+        category: 'Gunung',
+        location: 'Jawa Barat',
+        description: 'Gunung Lalakon merupakan sebuah gunung yang terdapat di Kampung Jelegong, Desa Badaraksa, Kecamatan Kutawaringin, Kabupaten Bandung, Jawa Barat dan memiliki ketinggian 870 meter. Gunung Lalakon terkenal dikarenakan bentuknya yang menyerupai kerucut sempurna atau piramida.',
+        image: 'https://correcto.id/content/images/th1_2020102010051989908.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Indrayanti',
+        code: '050',
+        category: 'Pantai',
+        location: 'Yogyakarta',
+        description: 'Pantai Indrayanti adalah salah satu tempat wisata pantai di Jogja yang sering direkomendasikan pada wisatawan. Nama pantai Indrayanti sendiri sudah cukup dikenal di kalangan wisatawan baik lokal ataupun manca negara. Sama seperti tipikal pantai selatan di wilayah gunung kidul, pemandangan disini tidak kalah indahnya.',
+        image: 'https://jogjacars.com/wp-content/uploads/2020/01/Pantai-Indrayanti-sumber-Camera-Wisata.png'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Nglambor',
+        code: '051',
+        category: 'pantai',
+        location: 'Yogyakarta',
+        description: 'Pantai Nglambor adalah sebuah pantai eksotis yang terletak di Kelurahan Purwodadi, Kecamatan Tepus, Gunung Kidul, Daerah Istimewa Yogyakarta. Lokasinya persis di sebelah barat dari Pantai Siung dan sebelah timur dari Pantai Jogan.',
+        image: 'https://img.inews.co.id/media/822/files/inews_new/2020/03/31/IMG_31032020_143523__822_x_430_piksel_.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Kesirat',
+        code: '052',
+        category: 'Pantai',
+        location: 'Yogyakarta',
+        description: 'Pantai Kesirat atau Wisata Tanjung Kesirat merupakan salah satu pantai di Gunung Kidul yang memiliki topografi berbeda jika dibandingkan dengan pantai yang ada. Disini kamu tidak akan menyaksikan hamparan pasir yang menghiasi pantai, bahkan bermain air dan berenang pun tidak dapat kamu lakukan. Pantai ini hanya memiliki tebing karang dengan hiasan rumput serta pepohonan yang ada di sekitarnya, posisi lautan ada di bagian bawah tebing.',
+        image: 'https://raskita.com/wp-content/uploads/2019/09/Pantai-Kesirat.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Dago Dreampark',
+        code: '053',
+        category: 'Taman',
+        location: 'Jawa Barat',
+        description: 'Dago Dreampark merupakan wisata kekinian di Kota Bandung dengan luas 13 hektar yang mengusung konsep Jawa - Sunda & Bali dengan dilengkapi berbagai fasilitas & wahana yang menarik.',
+        image: 'https://img.idxchannel.com/media/500/images/idx/2021/10/14/Dago_Dreampark.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Water Blaster Bukit Candi Golf',
+        code: '054',
+        category: 'Air',
+        location: 'Jawa Tengah',
+        description: 'Water Blaster Semarang Graha Candi Golf merupakan wahana permainan air yang pertama kali berdiri di Semarang dan menjadi andalan rekreasi keluarga warga kota Semarang. Total wahana air yang dimiliki Water Blaster Semarang ini delapan unit. Keutamaan wahana ini memiliki arus luncur dengan ketinggian 25 meter di atas permukaan tanah. Anda dapat meluncur cepat dan berputar sepanjang 230 meter hingga tercebur ke dalam kolam yang segar.',
+        image: 'https://2.bp.blogspot.com/-XTMgXVkHPSs/V2our7KuviI/AAAAAAAAEoI/UarKRrS9gvEGid0gkNtvKC7Rd_Wi2AXSgCLcB/w1280-h720-p-k-no-nu/water%2Bblaster%2Bsemarang.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Taman Sungai Mudal',
+        code: '055',
+        category: 'Taman',
+        location: 'Yogyakarta',
+        description: 'Taman Sungai Mudal, sebuah objek wisata alam terbuka yang terletak di Kabupaten Kulon Progo, yang menawarkan pesona sebuah kolam pemandian yang bersumber dari mata air alami. Mata airnya bersumber dari sebuah goa, sehingga kehadiran Taman Sungai Mudal menjadi mengesampingkan kesan angker dari sebuah goa. Apalagi ditambah dengan dukungan fasilitas yang membuat para wisatawan merasa nyaman saat berada di sana.',
+        image: 'https://ksmtour.com/media/images/articles27/taman-sungai-mudal-kulonprogo-Yogyakarta.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Marina',
+        code: '056',
+        category: 'Pantai',
+        location: 'Jawa Tengah',
+        description: 'Pantai Marina adalah salah satu objek wisata pantai yang berada di kota Semarang, Jawa Tengah. Pantai ini menyimpan pemandangan eksotis khas kota Semarang. Dahulu, tempat ini merupakan hutan bakau dan tambak, tapi pemerintah setempat mengubahnya menjadi tempat rekreasi dengan cara reklamasi daratan',
+        image: 'https://www.hargatiket.net/wp-content/uploads/2021/03/pantai-marina-semarang-buka-atau-tutup.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Tempo Gelato Prawirotaman',
+        code: '057',
+        category: 'Pasar',
+        location: 'Yogyakarta',
+        description: 'Tempo Gelato ialah gerai es krim paling diburu di Kota Gudeg. Saat ini Tempo Gelato berada di 3 lokasi yang berbeda, yaitu Taman Siswa, Prawirotaman, dan di Jalan Kaliurang. Di tempat ini terdapat banyak varian es krim mulai dari buah-buahan, rempah-rempah bahkan sorbet.',
+        image: 'https://phinemo.com/wp-content/uploads/2017/10/tempo-gelato.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Taman Film',
+        code: '058',
+        category: 'Taman',
+        location: 'Jawa Barat',
+        description: 'Taman Film adalah salah satu taman tematik dan ruang terbuka publik di Kota Bandung yang terletak di bawah Jembatan Pasupati, Bandung, Jawa Barat. Taman ini diresmikan oleh Wali kota Bandung, Ridwan Kamil, pada tanggal 14 September 2014.',
+        image: 'https://sikidang.com/wp-content/uploads/Spot-Wisata-Taman-Film-Bandung.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Siung',
+        code: '059',
+        category: 'Pantai',
+        location: 'Yogyakarta',
+        description: 'Pantai Siung adalah suatu objek wisata pantai yang terletak di Kec. Tepus, tepatnya berada di Dusun Duwet, Kelurahan Purwodadi, Kecamatan Tepus, Kabupaten Gunungkidul, provinsi Daerah Istimewa Yogyakarta.',
+        image: 'https://piknikwisata.com/wp-content/uploads/2020/02/info-wisata-pantai-siung-jogja.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Ngandong',
+        code: '060',
+        category: 'Pantai',
+        location: 'Yogyakarta',
+        description: 'Pantai Ngandong merupakan salah satu pantai yang terdapat di daerah Gunung Kidul, Yogyakarta, selain itu lokasinya bersebelahan dengan Pantai Sundak. Pantai Ngandong memiliki pemandangan alam yang indah, hamparan pasir putihnya berpadu dengan air lautnya yang bersih, serta batuan karang yang ikut menghiasi lautan',
+        image: 'https://cdn.nativeindonesia.com/foto/pantai-ngandong/keindahan-pantai-ngandong-ketika-surut.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'NuArt Sculpture Park',
+        code: '061',
+        category: 'Taman',
+        location: 'Jawa Barat',
+        description: 'NuArt Sculpture Park merupakan destinasi wisata di Bandung yang memadukan antara unsur seni, budaya dan alam. NuArt Sculpture Park mengahadirkan berbagai macam bentuk patung yang unik dengan imajinasi tinggi. Sehingga, pengunjung yang datang akan terbawa alur imajinasi dari karya Nyoman Nuarta tersebut.',
+        image: 'https://statik.tempo.co/data/2020/03/29/id_926794/926794_720.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'The Lodge Maribaya',
+        code: '062',
+        category: 'Taman',
+        location: 'Jawa Barat',
+        description: 'The Lodge Maribaya adalah salah satu tempat wisata di Lembang yang menawarkan berbagai hal pada pengunjung. Disini kita bisa melakukan berbagai akitivitas seperti camping, trekking mengelilingi area hutan pinus yang indah, acara gathering dan team building, atau bahkan hanya sekedar refreshing menikmati kuliner.',
+        image: 'https://anekatempatwisata.com/wp-content/uploads/2021/05/The-Lodge-Maribaya-klook.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Jungwok',
+        code: '063',
+        category: 'Pantai',
+        location: 'Yogyakarta',
+        description: 'Pantai Jungwok adalah pantai yang terletak di Desa Jepitu, Kecamatan Girisubo, Kabupaten Gunungkidul, Daerah Istimewa Yogyakarta. Pantai Jungwok merupakan salah satu pantai yang memiliki panorama yang indah dengan pasir putih yang khas dari pantai di Gunung Kidul.',
+        image: 'https://www.jejakpiknik.com/wp-content/uploads/2017/05/bb-2-630x380.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Taman Bungkul',
+        code: '064',
+        category: 'Taman',
+        location: 'Jawa Timur',
+        description: 'Taman Bungkul adalah taman wisata kota yang terletak di pusat kota Surabaya, tepatnya di Jalan Raya Darmo. Taman ini berdiri di area seluas 900 meter persegi. Dilengkapi berbagai fasilitas penunjang, seperti amfiteater berdiameter 33 meter, lajur joging, lahan papan luncur, taman bermain anak-anak, air mancur, dan pujasera. Selain itu, taman ini juga dilengkapi akses internet nirkabel yang terbuka untuk umum sehingga siapapun bisa mengakses internet selama di taman ini. ',
+        image: 'https://cdn1-production-images-kly.akamaized.net/E8648rQFx3FLU2TIIHEWUY8KlZw=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/764274/original/055991500_1415678232-4_ragamnusantara_info.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Kawah Rengganis Cibuni',
+        code: '065',
+        category: 'Air',
+        location: 'Jawa Barat',
+        description: 'Kawah Rengganis merupakan salah satu destinasi wisata di Bandung Selatan tepatnya berada di daerah kawasan Ciwidey, Kawah Rengganis merupakan kawah yang menyajikan keindahan alam yang masih alami, selain itu terdapat sumber air panas dan lumpur alami dari luapan gas yag berasal dari kawah.',
+        image: 'https://dolanyok.com/wp-content/uploads/2019/01/Kawah-Rengganis-zainfoto.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Gunung Papandayan',
+        code: '066',
+        category: 'Gunung',
+        location: 'Jawa Barat',
+        description: 'Gunung Papandayan adalah gunung api strato yang terletak di Kabupaten Garut, Jawa Barat tepatnya di Kecamatan Cisurupan. Gunung dengan ketinggian 2665 meter di atas permukaan laut itu terletak sekitar 70 km sebelah tenggara Kota Bandung. Pada Gunung Papandayan, terdapat beberapa kawah yang terkenal.',
+        image: 'https://www.jelajahgarut.com/wp-content/uploads/2020/11/Papandayan-2-1024x683.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Taman Balai Kota Bandung',
+        code: '067',
+        category: 'Taman',
+        location: 'Jawa Barat',
+        description: 'Taman Balai Kota Bandung merupakan sebuah taman kota yang terletak di Kota Bandung. Taman ini berada di sebelah selatan Balai Kota Bandung. Saat ini, Taman Balai Kota Bandung terdiri dari dua taman yang menyatu, antara lain Taman Dewi Sartika dan Taman Badak.',
+        image: 'https://www.pinhome.id/info-area/wp-content/uploads/2022/03/taman-balai-kota-bandung.jpeg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Sundak',
+        code: '068',
+        category: 'Pantai',
+        location: 'Yogyakarta',
+        description: 'Pantai Sundak merupakan sebuah objek wisata alam berupa Pantai yang berada di daerah Wonosari. Pantai ini terletak sekitar 3 Km dari Pantai Kukup. Meskipun Pantai Sundak tidak terlalu besar, namun pantai ini menyajikan keindahan alam yang alami dan menyenangkan.',
+        image: 'https://antarejatour.com/wp-content/uploads/2019/09/Pantai-Sundak-sumber-ig-coco_z.o.e.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Drini',
+        code: '069',
+        category: 'Pantai',
+        location: 'Yogyakarta',
+        description: 'Pantai Drini adalah salah satu objek wisata yang terletak di Desa Banjarejo, Kecamatan Tanjungsari,Gunungkidul, Yogyakarta. Letaknya di sebelah timur Pantai Baron dan berjarak sekitar 1 km ke arah timur Pantai Sepanjang. Namun jarak sebenarnya yang harus ditempuh untuk sampai ke pantai ini sejauh 60 km atau sekitar 2-3 jam dari Kota Yogyakarta. ',
+        image: 'https://cdn.statically.io/img/catperku.com/f=auto%2Cq=70/wp-content/uploads/Pantai-Drini-ini-adalah-salah-satu-pantai-favorit-saya-Di-Gunungkidul-Jogja.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Pantai Baron',
+        code: '070',
+        category: 'Pantai',
+        location: 'Yogyakarta',
+        description: 'Pantai Baron adalah salah satu objek wisata berupa pantai yang terletak di Desa Kemadang, Kecamatan Tanjungsari, Kabupaten Gunungkidul. Lokasi Pantai Baron dapat ditempuh 40 km daeri pusat kota Yogyakarta. Asal mula nama Pantai Baron berasal dari nama seorang bangsawan asal Belanda yang bernama Baron Skeber.',
+        image: 'https://www.alodiatour.com/wp-content/uploads/2018/10/lokasi-7.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Curug Tilu Leuwi Opat',
+        code: '071',
+        category: 'Air',
+        location: 'Jawa Barat',
+        description: 'Curug Tilu Leuwi Opat merupakan salah satu wisata curug di Lembang. Tempatnya sendiri cukup luas. Disini ada area outbond, camping, dan tentunya wisata air terjun dan sungai.Area depan berupa lembah dengan sungai jernih. Biasanya outbond, camping, dan permainan dilakukan di area ini.',
+        image: 'https://cdn.nativeindonesia.com/foto/2016/05/curug-tilu-leuwi-opat-lembang-bandung.jpg'
+    })
+    await destinationService.createDestination({
+        name: 'Bukit Jamur',
+        code: '072',
+        category: 'Taman',
+        location: 'Jawa Barat',
+        description: 'Bukit Jamur merupakan fenomena alam yang biasa disebut Mushroom Rock, yaitu fenomena di mana batu terkikis oleh angin yang akan membawa dan membuang material-material kecil dari batu tersebut. Bukit Jamur Gresik merupakan salah satu wisata baru yang banyak dikunjungi oleh wisatawan setiap harinya.',
+        image: 'https://cdns.klimg.com/merdeka.com/i/w/news/2019/02/26/1054945/content_images/670x335/20190226121606-1-bukit-jamur-rancabolang-002-tantri-setyorini.jpg'
+    })
+    await destinationService.createDestination({
         name: 'Taman Suropati',
         code: '073',
         category:'Taman', 
