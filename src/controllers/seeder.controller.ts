@@ -655,12 +655,12 @@ const destinationSeeder = catchAsync(async (req: express.Request, res:express.Re
         image: 'https://img.inews.co.id/media/822/files/inews_new/2020/03/12/IMG_12032020_142215__822_x_430_piksel_.jpg'
     })
     await destinationService.createDestination({
-        name: 'Taman Hutan Raya Ir. H. Juanda',
+        name: 'Pantai Teluk Asmara',
         code: '082',
-        category:'Taman', 
-        location: 'Jawa Barat', 
-        description: 'Taman Hutan Raya Ir. H. Djuanda (Tahura Djuanda) merupakan kawasan konservasi yang terpadu antara alam sekunder dengan hutan tanaman dengan jenis Pinus (Pinus merkusil). Taman terbesar yang pernah dibangun oleh Pemerintah Hindia Belanda ini pada awalnya merupakan hutan lindung dengan nama Hutan Lindung Pulosari.',
-        image: 'https://1.bp.blogspot.com/-a5FyQZGibaI/YAUzIv6BWCI/AAAAAAAAAME/7nILEExS5TE7ZFhWuEFbBuV5whZ4Qri_wCLcBGAsYHQ/s1277/1.PNG'
+        category:'Pantai', 
+        location: 'Jawa Timur', 
+        description: 'Pantai Teluk Asmara, atau yang lebih dikenal sebagai Pantai Teluk Asmoro oleh warga setempat. Pantai ini menyuguhkan hamparan pasir putih dengan bebatuan karang yang terhampar di perairannya yang biru. Pantai ini sendiri dinamakan Teluk Asmara karena ada bebatuan karang di dekatnya yang bentuknya menyerupai hati bila dilihat dari atas.',
+        image: 'https://1.bp.blogspot.com/-SmuZ1tA7gFw/XoeG6zxe4eI/AAAAAAAAGEo/0j2e8rhte4ENbnU6wtGq8hy39rs9auYgACLcBGAsYHQ/w1200-h630-p-k-no-nu/PANTAI-TELUK-ASMARA-MALANG-10.jpg'
     })
     await destinationService.createDestination({
         name: 'Taman Cattleya',
