@@ -4,6 +4,7 @@ import * as mongoose from 'mongoose';
 
 export interface Destination {
     code: string,
+    caategory: string,
     name: string,
     location: string, 
     description: string,
@@ -17,6 +18,7 @@ const destinationSchema =  new mongoose.Schema<Destination>({
         required: true,
         trim: true,
     },
+    category: String,
     location:{
         type: String,
     },

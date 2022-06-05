@@ -1,6 +1,7 @@
 import {Destination, destinationModel} from '../models/destination.model'
 import ApiError from '../utils/api-error';
 import httpStatus from 'http-status';
+import { ObjectId } from 'mongoose';
 
 
 /**
@@ -9,6 +10,8 @@ import httpStatus from 'http-status';
  * @returns {Destination}
  */
 const createDestination=async(destinationBody: any)=>{
+    const ext = await getDestination({name: destinationBody.name})
+    if(ext) return
     return await destinationModel.create(destinationBody)
 }
 
@@ -18,7 +21,7 @@ const createDestination=async(destinationBody: any)=>{
  * @param selector
  * @returns {Destination}
  */
-const getDestinationByID=async (destinationID: string, selector?: any)=>{
+const getDestinationByID=async (destinationID: any, selector?: any)=>{
     return destinationModel.findById(destinationID).select(selector)
 }
 
@@ -35,6 +38,10 @@ const getDestination=async (filter: any, selector?: any, populate?: any)=>{
 
 const getDestinations=async (filter: any, selector?: any, populate?: any)=>{
     return destinationModel.find(filter).select(selector).populate(populate)
+}
+
+const getDestinationsPaginate=async (filter: any, perPage: number, page: number)=>{
+    return destinationModel.find(filter).limit(perPage).skip(page*perPage)
 }
 
 const updateDestinationByID=async (destinationID: string, updateBody: any)=>{
@@ -60,6 +67,7 @@ const destinationService = {
     createDestination,
     getDestination,
     getDestinations,
+    getDestinationsPaginate,
     getDestinationByID,
     updateDestinationByID,
     deleteDestinationByID,
