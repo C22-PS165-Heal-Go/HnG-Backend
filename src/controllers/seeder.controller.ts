@@ -28,7 +28,7 @@ const destinationSeeder = catchAsync(async (req: express.Request, res: express.R
         category: 'Taman',
         location: 'Jakarta',
         description: 'Dufan atau disebut juga Dunia Fantasi adalah sebuah theme park yang terletak di kawasan Taman Impian Jaya Ancol, Jakarta Utara, Indonesia yang diresmikan dan dibuka untuk umum pada tanggal 29 Agustus 1985',
-        image: 'https://www.ancol.com/shared/images/606bc34a-097b-4b33-8fcb-92247a25b2bd.jpg'
+        image: 'https://www.wowkeren.com/display/images/photo/2019/09/02/00271060_1.jpghttps://www.wowkeren.com/display/images/photo/2019/09/02/00271060_1.jpg'
     })
     await destinationService.createDestination({
         name: 'Taman Mini Indonesia Indah (TMII)',
