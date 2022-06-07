@@ -15,12 +15,12 @@ const getRecommendation = catchAsync(async (req: express.Request, res: express.R
 
 
     const data={
-        'member':(member+1)/5.0,
+        'member':member/4.0,
         'sport':sport==1?0.0:1.0,
-        'days':(day+1)/5.0,
-        'time':(time+1)/4.0,
+        'days':day/4.0,
+        'time':time/3.0,
         'gender':gender,
-        'price':(price+1)/4.0,
+        'price':price/3.0,
         'berbelanja':activity.includes(7)?1.0:0.0,
         'petualang':activity.includes(1)?1.0:0.0,
         'foto':activity.includes(5)?1.0:0.0,
