@@ -42,6 +42,14 @@ const apiRoutes: RouterMap = [
             RecommendationController.getRecommendation
         ]
     },{
+        method: 'post',
+        endpoint: '/feedback',
+        handlers: [
+            // validator(apiSchemas.recommendation),
+            jwtTokenMiddleware,
+            RecommendationController.generateResult
+        ]
+    },{
         method: 'get',
         endpoint: '/seed',
         handlers: [
