@@ -15,12 +15,12 @@ const getRecommendation = catchAsync(async (req: express.Request, res: express.R
 
 
     const data={
-        'member':(member+1)/5.0,
+        'member':member/4.0,
         'sport':sport==1?0.0:1.0,
-        'days':(day+1)/5.0,
-        'time':(time+1)/4.0,
+        'days':day/4.0,
+        'time':time/3.0,
         'gender':gender,
-        'price':(price+1)/4.0,
+        'price':price/3.0,
         'berbelanja':activity.includes(7)?1.0:0.0,
         'petualang':activity.includes(1)?1.0:0.0,
         'foto':activity.includes(5)?1.0:0.0,
@@ -40,23 +40,50 @@ const getRecommendation = catchAsync(async (req: express.Request, res: express.R
     const result = x.data.destinations
     const destinations =[]
     for await(const dest of result){
-        const detail = await destinationService.getDestination({name: dest})
-        const rec = await recommendationService.createRecommendation({
-            user: req.user?.email,
-            destination: detail?.id,
-            status: 0
-        })
-        destinations.push({id:rec.id, name: detail?.name, location: detail?.location, description: detail?.description, image: detail?.image})
+        const detail = await destinationService.getDestination({name:{$regex: dest, $options:'i'}})
+        if(detail)
+        {
+            const rec = await recommendationService.createRecommendation({
+                user: req.user?.email,
+                destination: detail?.id,
+                status: 0
+            })
+            destinations.push({id:rec.id, name: detail?.name, location: detail?.location, description: detail?.description, image: detail?.image})
+        }
     }
-
     sendResponse(res, {data: destinations})
 })
 
 
+const generateResult = catchAsync(async (req: express.Request, res: express.Response)=>{
+    const {data} = req.body
+    const list=[];
+    for await (const rec of data){
+        const recom = await recommendationService.getRecommendationByID(rec.id)
+        const dest = await destinationService.getDestinationByID(recom?.destination)
+        list.push({destination: dest?.name, like: rec.like}) 
+    }
+    const ml = await axios.post('http://'+config.mlSvc+'/recommend', {input:list})
+
+    for await(const dest of ml.data.data){
+        const detail = await destinationService.getDestination({name:{$regex: dest, $options:'i'}})
+        if(detail)
+        {
+            const rec = await recommendationService.createRecommendation({
+                user: req.user?.email,
+                destination: detail?.id,
+                status: 1
+            })
+        }
+    }
+
+    sendResponse(res,{data: {status:'OK'}})
+})
 
 
 const RecommendationController={
-    getRecommendation
+    getRecommendation,
+    generateResult
 
 }
 

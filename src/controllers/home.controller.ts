@@ -16,23 +16,24 @@ const getHome = catchAsync(async (req: express.Request, res: express.Response)=>
     const home=[]
     const recommendation = await recommendationService.getRecommendations({user: req.user?.email})
     if(recommendation.length>0){
-        for (let i=0;i<5;i++){
+        const picker= recommendation.length >=5? 5: recommendation.length
+        for (let i=0;i<picker;i++){
             const dest = await destinationService.getDestinationByID(recommendation[i].destination)
             home.push({name: dest?.name, 
                 description: dest?.description, 
                 location: dest?.location, 
                 image: dest?.image})
         }
-    }else{
-        for(let i=0;i<5;i++){
-            const x = await Math.floor((Math.random() * 39) + 1);
-            const dest = await destinationService.getDestination({code:zeroPad(x,3)})
-            home.push({name: dest?.name, 
-                description: dest?.description, 
-                location: dest?.location, 
-                image: dest?.image})
-        }
     }
+    for(let i=home.length;i<10;i++){
+        const x = await Math.floor((Math.random() * 39) + 1);
+        const dest = await destinationService.getDestination({code:zeroPad(x,3)})
+        home.push({name: dest?.name, 
+            description: dest?.description, 
+            location: dest?.location, 
+            image: dest?.image})
+    }
+    
     sendResponse(res, {data: home})
 })
 
