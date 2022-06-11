@@ -28,7 +28,7 @@ const destinationSeeder = catchAsync(async (req: express.Request, res: express.R
         category: 'Taman',
         location: 'Jakarta',
         description: 'Dufan atau disebut juga Dunia Fantasi adalah sebuah theme park yang terletak di kawasan Taman Impian Jaya Ancol, Jakarta Utara, Indonesia yang diresmikan dan dibuka untuk umum pada tanggal 29 Agustus 1985',
-        image: 'https://www.ancol.com/shared/images/606bc34a-097b-4b33-8fcb-92247a25b2bd.jpg'
+        image: 'https://www.wowkeren.com/display/images/photo/2019/09/02/00271060_1.jpg'
     })
     await destinationService.createDestination({
         name: 'Taman Mini Indonesia Indah (TMII)',
@@ -1140,7 +1140,7 @@ const destinationSeeder = catchAsync(async (req: express.Request, res: express.R
         category: 'Air',
         location: 'Jawa Timur',
         description: 'Air terjun Madakaripura berada di ujung lembah sempit dan berbentuk ceruk yang dikelilingi tebing-tebing curam yang meneteskan air pada seluruh bidang tebingnya seperti layaknya sedang hujan, 3 di antaranya bahkan mengucur deras membentuk air terjun lagi.',
-        image: 'https://setapaklangkah.com/wp-content/uploads/2020/10/Wisata-Air-Terjun-Madakaripura.jpg'
+        image: 'https://upload.wikimedia.org/wikipedia/commons/9/91/Waterfall_Madakaripura_A.JPG'
     })
     await destinationService.createDestination({
         name: 'Pantai Klingking',
